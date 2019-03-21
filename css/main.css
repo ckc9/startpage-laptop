@@ -1,0 +1,311 @@
+:root {
+    --fg: #FAFAFA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #101010;
+    color: var(--fg);
+}
+
+main {
+    position: relative;
+    width: 85%;
+    margin: 50px auto 0;
+    background-size: cover;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+a, span,
+#prev, #next,
+#weather p {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+button { cursor: pointer }
+
+#shortcuts {
+    padding-left: 10px;
+    position: absolute;
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+#shortcuts span {
+    color: rgba(250, 250, 250, .5);
+    padding: 10px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+#shortcuts span:hover { text-shadow: 1px 1px 8px var(--highlight) }
+
+.spanActive { color: var(--highlight) }
+
+#search {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, .75);
+    color: var(--fg);
+}
+
+#weather {
+    position: absolute;
+    display: flex;
+    padding: 10px 10px 0 0;
+    right: 0;
+    font-size: 2.2em;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+#weather > * {
+    padding: 0 5px;
+}
+
+#weather > span {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+#weather > i {
+    margin-top: 5px;
+}
+
+#weather:hover span {
+    width: 120px;
+    padding: 0 5px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 40px;
+    outline-color: rgba(0, 0, 0, 0);
+    transition: all .3s;
+    overflow: hidden;
+}
+
+section:hover, .open {
+    width: 100%;
+}
+
+.active {
+    outline-color: var(--fg);
+    outline-style: solid;
+    outline-offset: -3px;
+}
+
+article > section:nth-child(1) {
+    background-color: var(--color1);
+}
+
+article > section:nth-child(2) {
+    background-color: var(--color2);
+}
+
+article > section:nth-child(3) {
+    background-color: var(--color3);
+}
+
+article > section:nth-child(4) {
+    background-color: var(--color4);
+}
+
+li:hover .edit {
+    opacity: 1;
+}
+
+.active .shortcut {
+    opacity: 1;
+}
+
+ul {
+    display: flex;
+    font-size: 2em;
+    list-style-type: none;
+    margin-left: 200px;
+}
+
+ul a {
+    display: block;
+    text-decoration: none;
+    color: var(--fg);
+    padding: 20px;
+    transition: transform .2s;
+}
+
+ul span {
+    position: absolute;
+    padding: 5px;
+    opacity: 0;
+    font-size: 24px;
+    transition: all .2s;
+}
+
+.edit {
+    z-index: 1;
+    top: -10px;
+    right: 0; 
+    color: rgba(250, 250, 250, .5);
+    cursor: pointer;
+}
+
+.shortcut {
+    top: -10px;
+    cursor: default;
+}
+
+ul a:hover, .edit:hover {
+    transform: scale(1.3);
+}
+
+.edit:hover {
+    color: var(--fg);
+}
+
+li { position: relative }
+
+section > button {
+    position: absolute;
+    height: 200px;
+    width: 40px;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, .2);
+    color: var(--fg);
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+section > button:hover {
+    opacity: 1;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#new-link {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    padding-top: 25vh;    
+    animation: dropIn .4s;
+}
+
+#new-link form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(30, 30, 30);
+    padding: 25px;
+    border-radius: 5px;
+}
+
+#new-link label, #new-link input {
+    font-size: 2em;
+}
+
+#new-link input {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    background: none;
+    border-bottom: 2px solid var(--highlight);
+    color: var(--fg);
+}
+
+#new-link form > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#new-link button {
+    width: 150px;
+    padding: 10px;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--fg);
+    border-radius: 5px;
+}
+
+#delete-btn {
+    margin-left: 20px
+}
+
+#new-link div {
+    text-align: center;
+}
+
+#prev, #next {
+    position: absolute;
+    top: calc(50vh - 250px);
+    cursor: pointer;
+    width: 50px;
+    font-size: 6em;
+    padding: 10px;
+    height: 500px;
+    line-height: 500px;
+    overflow: hidden;
+}
+
+#prev:hover  div {
+    left: -30px;
+}
+
+#next:hover div {
+    right: 15px;
+}
+
+#next { right: 0 }
+
+#prev div, #next div { position: relative }
+
+#prev div {
+    left: -80px;
+    transition: left .2s;
+}
+
+#next div {
+    right: -35px;
+    transition: right .2s;
+}
+
+@keyframes dropIn {
+    from {
+        top: -510px; 
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}

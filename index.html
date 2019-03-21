@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>&~</title>
+    <link rel="stylesheet" href="css/theme1.css" id="theme">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div id="shortcuts">
+            <span>-g</span>
+            <span>-d</span>
+            <span>-w</span>
+            <span>-y</span>
+            <span>-i</span>
+        </div>
+        <div id="weather">
+            <i class="wi"></i>
+            <span></span>
+            <p></p>
+        </div>        
+        <input type="text" placeholder="search" id="search">
+
+        
+        <article>
+            <section id="list1" data-id="1" class="list">
+                <button>+</button>
+                <ul>
+                    <!--
+                    <li>
+                        <span class="edit">x</span>
+                        <span class="shortcut">[q]</span>
+                        <a href="#">link1</a>
+                    </li>
+                    <li>
+                        <span class="edit material-icons">edit</span>
+                        <span class="shortcut">w</span>
+                        <a href="#">link2</a>
+                    </li>
+                    <li>
+                        <span class="edit">x</span>
+                        <span class="shortcut">e</span>
+                        <a href="#">link3</a>
+                    </li>-->
+                </ul>
+            </section>
+            <section data-id="2" class="list">
+                <button>+</button>
+                <ul>
+                    <a href="#">link1</a>
+                    <a href="#">link2</a>
+                    <a href="#">link3</a>
+                    <a href="#">link4</a>
+                    <a href="#">link5</a>
+                </ul>
+            </section>
+            <section data-id="3" class="list">
+                <button>+</button>
+                <ul>
+                    <a href="#">link1</a>
+                    <a href="#">link2</a>
+                    <a href="#">link3</a>
+                    <a href="#">link4</a>   
+                </ul>
+
+            </section>
+            <section data-id="4" class="list">
+                <button>+</button>
+                <ul>
+                    <a href="#">link1</a>
+                    <a href="#">link2</a>
+                    <a href="#">link3</a>
+                    <a href="#">link4</a>                        
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <div id="modal">
+        <div id="new-link">
+            <form>
+                <label for="link-name">link name</label>
+                <input type="text" id="link-name">
+                <label for="link-url">link url</label>
+                <input type="text" id="link-url">
+                <div>
+                    <button type="button" id="submit">submit</button>  
+                    <button type="button" id="delete-btn" style="display: none">delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="prev" class="material-icons">
+        <div>keyboard_arrow_left</div>
+    </div>
+
+    <div id="next" class="material-icons">
+        <div>keyboard_arrow_right</div>
+    </div>
+
+<script src="js/weather.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/keybinds.js"></script>
+<script src="js/main.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

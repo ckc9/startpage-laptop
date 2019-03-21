@@ -1,0 +1,9 @@
+:root {
+    --color1: rgba(41, 29, 33, .8);
+    --color2: rgba(21, 88, 104, .8);
+    --color3: rgba(255, 218, 40, .8);
+    --color4: rgba(34, 147, 49, .8);
+    --highlight: rgb(255, 218, 40)
+}
+
+main { background: url('../media/bg6.gif') }

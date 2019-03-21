@@ -1,0 +1,12 @@
+:root {
+    --color1: rgba(85, 193, 255, .5);
+    --color2: rgba(16, 46, 74, .5);
+    --color3: rgba(17, 26, 34, .5);
+    --color4: rgba(255, 118, 32, .5);
+    --highlight: rgb(85, 193, 255)
+}
+
+main { 
+    background: url('../media/bg.gif');
+    background-size: initial !important;
+}
