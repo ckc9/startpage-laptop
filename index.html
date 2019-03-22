@@ -30,7 +30,7 @@
             <section id="list1" data-id="1" class="list">
                 <button>+</button>
                 <ul>
-                    <!--
+<!--
                     <li>
                         <span class="edit">x</span>
                         <span class="shortcut">[q]</span>
@@ -45,44 +45,31 @@
                         <span class="edit">x</span>
                         <span class="shortcut">e</span>
                         <a href="#">link3</a>
-                    </li>-->
+                    </li>
+-->
                 </ul>
             </section>
+
             <section data-id="2" class="list">
                 <button>+</button>
-                <ul>
-                    <a href="#">link1</a>
-                    <a href="#">link2</a>
-                    <a href="#">link3</a>
-                    <a href="#">link4</a>
-                    <a href="#">link5</a>
-                </ul>
+                <ul></ul>
             </section>
+
             <section data-id="3" class="list">
                 <button>+</button>
-                <ul>
-                    <a href="#">link1</a>
-                    <a href="#">link2</a>
-                    <a href="#">link3</a>
-                    <a href="#">link4</a>   
-                </ul>
-
+                <ul></ul>
             </section>
+
             <section data-id="4" class="list">
                 <button>+</button>
-                <ul>
-                    <a href="#">link1</a>
-                    <a href="#">link2</a>
-                    <a href="#">link3</a>
-                    <a href="#">link4</a>                        
-                </ul>
+                <ul></ul>
             </section>
         </article>
     </main>
 
     <div id="modal">
         <div id="new-link">
-            <form>
+            <form id="link-form">
                 <label for="link-name">link name</label>
                 <input type="text" id="link-name">
                 <label for="link-url">link url</label>
@@ -92,6 +79,7 @@
                     <button type="button" id="delete-btn" style="display: none">delete</button>
                 </div>
             </form>
+            <div id="forecast" style="display: none"></div>
         </div>
     </div>
 

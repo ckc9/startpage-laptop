@@ -2,6 +2,7 @@ const e = e => document.querySelector(e),
       E = e => document.querySelectorAll(e);
 
 Object.prototype.toggleClass = function() { arguments[0].split(' ').forEach(arg => this.classList.toggle(arg)) }
+Object.prototype.pad = function(x = 2) { return (Array(x).join('0') + this).substr(-x) }
 Object.prototype.show = function(d = '') { this.style.display = d }
 Object.prototype.hide = function() { this.style.display = 'none' }
 Object.prototype.addLink = function(url, name) {
@@ -13,11 +14,13 @@ Object.prototype.addLink = function(url, name) {
 
 const Modal = {
     modal      : e('#modal'),
+    content    : e('#new-link'),
     linkName   : e('#link-name'),
     linkUrl    : e('#link-url'),
     submit     : e('#submit'),
     deleteBtn  : e('#delete-btn'),
     form       : e('#modal form'),
+    forecast   : e('#forecast'),
 
     get show() {
         this.modal.show('block');
@@ -31,6 +34,7 @@ const Modal = {
             id    = button.parentElement.dataset.id,
             links = JSON.parse(localStorage.links);
 
+        this.content.style.width = '600px';
         this.show;
 
         this.submit.onclick = () => {
@@ -57,10 +61,11 @@ const Modal = {
             index = spanList.indexOf(span),
             i = 0;
 
-        this.show;
+        this.content.style.width = '600px';
         this.deleteBtn.show();
         this.linkName.value = a.innerHTML;
         this.linkUrl.value = a.getAttribute('href');
+        this.show;
 
         this.submit.onclick = () => {
             let name = this.linkName.value,
@@ -96,12 +101,21 @@ const Modal = {
             modal.hide();
         }
     },
+
+    weather : function() {
+        e('#new-link').style.width = '1200px';
+        this.form.hide();
+        this.forecast.show();
+        this.show;
+    }
 }
 
 window.onclick = event => {
     if(event.target == e('#modal')) {
         e('#modal').hide();
         e('#delete-btn').hide();
+        e('#forecast').hide();
+        e('#modal form').show();
     }
 }
 
@@ -126,6 +140,7 @@ e('#prev').onclick = () => t.prev;
 if(localStorage.links == undefined) 
     localStorage.links = JSON.stringify([]);
 
+// links initialize
 JSON.parse(localStorage.links).forEach(link => 
     e(`[data-id="${link.list}"] ul`).addLink(link.url, link.name))
 
@@ -135,4 +150,4 @@ var t = new Theme(true);
 
 w.display;
 k.default;
-t.setTheme;
+t.display;

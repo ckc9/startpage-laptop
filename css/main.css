@@ -221,7 +221,7 @@ section > button:hover {
     animation: dropIn .4s;
 }
 
-#new-link form {
+#new-link form, #forecast {
     display: flex;
     flex-direction: column;
     background-color: rgb(30, 30, 30);
@@ -261,7 +261,28 @@ section > button:hover {
     margin-left: 20px
 }
 
-#new-link div {
+#link-form > div {
+    text-align: center;
+}
+
+#forecast {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 2em;
+}
+
+.suntime {
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+#forecast i {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+#forecast div {
     text-align: center;
 }
 
