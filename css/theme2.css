@@ -6,4 +6,7 @@
     --highlight: rgb(52, 211, 142);
 }
 
-main { background: url('../media/bg2.gif') }
+main { 
+    background: url('../media/bg2.gif');
+    background-size: initial !important;
+}
