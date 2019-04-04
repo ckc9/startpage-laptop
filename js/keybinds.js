@@ -13,7 +13,7 @@ class Keybind {
                     e('input').focus() 
                 else if(k === 'ArrowLeft' && !this.isInputFocused)
                     t.prev;
-                else if(k === 'ArrowRight' && !this.isInputFocused) 
+                else if(k === 'ArrowRight' && !this.isInputFocused)
                     t.next;
                 else if(parseInt(k) < 5) 
                     this.setActive( e(`[data-id="${k}"]`) );
@@ -63,8 +63,8 @@ class Keybind {
     get isInputFocused() {
         E('input').forEach(input => {
             if(input === document.activeElement)
-                return true;
+                return false;
         })
-        return false;
+        return true;
     }
 }
