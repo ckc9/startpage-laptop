@@ -11,9 +11,9 @@ class Keybind {
             if(!(e('input') == document.activeElement)) {
                 if(k === 's') 
                     e('input').focus() 
-                else if(k === 'ArrowLeft')
+                else if(k === 'ArrowLeft' && !this.isInputFocused)
                     t.prev;
-                else if(k === 'ArrowRight') 
+                else if(k === 'ArrowRight' && !this.isInputFocused) 
                     t.next;
                 else if(parseInt(k) < 5) 
                     this.setActive( e(`[data-id="${k}"]`) );
@@ -58,5 +58,13 @@ class Keybind {
             E('section').forEach(sec => sec.classList.remove('active'));
             section.classList.add('open', 'active');
         }
+    }
+
+    get isInputFocused() {
+        E('input').forEach(input => {
+            if(input === document.activeElement)
+                return true;
+        })
+        return false;
     }
 }
