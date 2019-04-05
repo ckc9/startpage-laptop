@@ -1,13 +1,13 @@
 :root {
-    --color1: rgba(17, 118, 75, .8);
-    --color2: rgba(19, 75, 68, .8);
-    --color3: rgba(17, 49, 66, .8);
-    --color4: rgba(156, 33, 66, .8);
-    --highlight: rgb(52, 211, 142);
+    --color1: rgba(26, 60, 76, .8);
+    --color2: rgba(57, 113, 138, .8);
+    --color3: rgba(93, 100, 118, .8);
+    --color4: rgba(146, 139, 139, .8);
+    --highlight: rgb(57, 113, 138);
 }
 
-main { 
-    background: url('../media/bg2.gif');
+main {
+    background: url(../media/bg12.gif);
     image-rendering: optimizeSpeed;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;

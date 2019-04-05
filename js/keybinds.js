@@ -8,15 +8,17 @@ class Keybind {
         document.onkeyup = event => {
             const k = event.key;
 
-            if(!(e('input') == document.activeElement)) {
+            if(this.isInputFocused) {
                 if(k === 's') 
                     e('input').focus() 
-                else if(k === 'ArrowLeft' && !this.isInputFocused)
+                else if(k === 'ArrowLeft')
                     t.prev;
-                else if(k === 'ArrowRight' && !this.isInputFocused)
+                else if(k === 'ArrowRight')
                     t.next;
                 else if(parseInt(k) < 5) 
                     this.setActive( e(`[data-id="${k}"]`) );
+                else if(k === 'f')
+                    e('main').classList.toggle('fullscreen');
                 else if( e('.active') ) {
                     let links = E('.active a');
 

@@ -16,11 +16,24 @@ body {
 
 main {
     position: relative;
-    width: 85%;
+    width: 90%;
     margin: 50px auto 0;
     background-size: cover;
     border-radius: 5px;
     overflow: hidden;
+    transition: all .2s;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: 1;
+    border-radius: 0;
+}
+
+.fullscreen section, .fullscreen section > button {
+    height: calc((100vh - 59px) / 4);
 }
 
 a, span,
@@ -96,14 +109,31 @@ article {
     flex-direction: column;
 }
 
+section, section >button {
+    height: 200px;
+    width: 40px;    
+}
+
 section {
     display: flex;
     align-items: center;
-    height: 200px;
-    width: 40px;
     outline-color: rgba(0, 0, 0, 0);
     transition: all .3s;
     overflow: hidden;
+}
+
+section > button {
+    position: absolute;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, .2);
+    color: var(--fg);
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+section > button:hover {
+    opacity: 1;
 }
 
 section:hover, .open {
@@ -144,7 +174,7 @@ ul {
     display: flex;
     font-size: 2em;
     list-style-type: none;
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 ul a {
@@ -185,22 +215,6 @@ ul a:hover, .edit:hover {
 }
 
 li { position: relative }
-
-section > button {
-    position: absolute;
-    height: 200px;
-    width: 40px;
-    font-size: 2em;
-    background-color: rgba(0, 0, 0, .2);
-    color: var(--fg);
-    opacity: 0;
-    transition: opacity .2s;
-    cursor: pointer;
-}
-
-section > button:hover {
-    opacity: 1;
-}
 
 #modal {
     display: none;

@@ -132,6 +132,7 @@ E('#new-link input').forEach(input => {
 E('.edit').forEach(span =>
     span.onclick = () => Modal.edit(span))
 
+// theme navigation
 e('#next').onclick = () => t.next;
 e('#prev').onclick = () => t.prev;
 
@@ -146,7 +147,7 @@ JSON.parse(localStorage.links).forEach(link =>
 
 var w = new Weather('07470');
 var k = new Keybind();
-var t = new Theme(true);
+var t = new Theme(false, 13);
 
 w.display;
 k.default;
