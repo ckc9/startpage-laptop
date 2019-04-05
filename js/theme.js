@@ -2,7 +2,7 @@ class Theme {
     constructor(r = true, t = 1) {
         this.random = r;
         this.theme = t;
-        this.max = 7;
+        this.max = 13;
     }
 
     get display() {

@@ -75,7 +75,6 @@ class Weather {
     }
 
     getIcon(icon, id) {
-        icon = icon[icon.length - 1];
-        return icon == 'd' ? `wi-owm-day-${id}` : `wi-owm-night-${id}`;
+        return icon[icon.length - 1] == 'd' ? `wi-owm-day-${id}` : `wi-owm-night-${id}`;
     }
 }

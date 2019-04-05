@@ -12,13 +12,15 @@ class Keybind {
                 if(k === 's') 
                     e('input').focus() 
                 else if(k === 'ArrowLeft')
-                    t.prev;
+                    t.prev
                 else if(k === 'ArrowRight')
-                    t.next;
+                    t.next
+                else if(k === 'ArrowDown')
+                    t.rand
                 else if(parseInt(k) < 5) 
-                    this.setActive( e(`[data-id="${k}"]`) );
+                    this.setActive( e(`[data-id="${k}"]`) )
                 else if(k === 'f')
-                    e('main').classList.toggle('fullscreen');
+                    e('main').classList.toggle('fullscreen')
                 else if( e('.active') ) {
                     let links = E('.active a');
 

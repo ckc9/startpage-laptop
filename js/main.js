@@ -5,22 +5,23 @@ Object.prototype.toggleClass = function() { arguments[0].split(' ').forEach(arg 
 Object.prototype.pad = function(x = 2) { return (Array(x).join('0') + this).substr(-x) }
 Object.prototype.show = function(d = '') { this.style.display = d }
 Object.prototype.hide = function() { this.style.display = 'none' }
+Object.prototype.toTwelveHr = function() { return this > 12 ? this - 12 : this }
 Object.prototype.addLink = function(url, name) {
     this.innerHTML += `<li>
                             <span class="edit material-icons" onclick="Modal.edit(this)">edit</span>
                             <a href="${url}">${name}</a>
-                        </li>`
+                       </li>`
 }
 
 const Modal = {
-    modal      : e('#modal'),
-    content    : e('#new-link'),
-    linkName   : e('#link-name'),
-    linkUrl    : e('#link-url'),
-    submit     : e('#submit'),
-    deleteBtn  : e('#delete-btn'),
-    form       : e('#modal form'),
-    forecast   : e('#forecast'),
+    modal     : e('#modal'),
+    content   : e('#new-link'),
+    linkName  : e('#link-name'),
+    linkUrl   : e('#link-url'),
+    submit    : e('#submit'),
+    deleteBtn : e('#delete-btn'),
+    form      : e('#modal form'),
+    forecast  : e('#forecast'),
 
     get show() {
         this.modal.show('block');
@@ -147,7 +148,7 @@ JSON.parse(localStorage.links).forEach(link =>
 
 var w = new Weather('07470');
 var k = new Keybind();
-var t = new Theme(false, 13);
+var t = new Theme();
 
 w.display;
 k.default;
