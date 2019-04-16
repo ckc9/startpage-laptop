@@ -8,7 +8,7 @@ class Keybind {
         document.onkeyup = event => {
             const k = event.key;
 
-            if(this.isInputFocused) {
+            if(!this.isInputFocused) {
                 if(k === 's') 
                     e('input').focus() 
                 else if(k === 'ArrowLeft')
