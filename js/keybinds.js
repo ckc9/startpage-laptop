@@ -8,7 +8,7 @@ class Keybind {
         document.onkeyup = event => {
             const k = event.key;
 
-            if(!this.isInputFocused) {
+            if(document.activeElement.tagName != "INPUT") {
                 if(k === 's') 
                     e('input').focus() 
                 else if(k === 'ArrowLeft')
@@ -62,13 +62,5 @@ class Keybind {
             E('section').forEach(sec => sec.classList.remove('active'));
             section.classList.add('open', 'active');
         }
-    }
-
-    get isInputFocused() {
-        E('input').forEach(input => {
-            if(input === document.activeElement)
-                return false;
-        })
-        return true;
     }
 }
